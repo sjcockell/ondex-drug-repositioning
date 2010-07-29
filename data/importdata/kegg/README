@@ -1,0 +1,23 @@
+Download instructions:
+======================
+1.   Go to ftp://ftp.genome.jp/pub/kegg/release/current/
+1.1. Download the files kgml.tar.gz, ligand.tar.gz and genes.tar.gz into this directory.
+1.2. Extract the three tarball files into this directory
+2.   Go to ftp://ftp.genome.jp/pub/kegg/genes/genome
+2.1  Save its contents into this directory.
+3.   Go to tp://ftp.genome.jp/pub/kegg/genes/ko
+3.1  Save its contents into this directory.
+
+Your directory listing should now look like this:
+
+total 4048592
+drwxr-xr-x   2 juser juser      36864 2009-01-19 16:39 genes
+-rw-r--r--   1 juser juser 3452644219 2009-01-15 18:40 genes.tar.gz
+-rw-r--r--   1 juser juser     692505 2009-01-15 14:52 genome
+-rw-r--r--   1 juser juser       9782 2009-01-19 12:49 keggHierarchy
+drwxr-xr-x 936 juser juser      20480 2009-01-19 16:42 kgml
+-rw-r--r--   1 juser juser  215582612 2009-01-15 14:58 kgml.tar.gz
+-rw-r--r--   1 juser juser   37496374 2009-01-15 14:54 ko
+drwxr-xr-x  14 juser juser       4096 2009-01-19 16:45 ligand
+-rw-r--r--   1 juser juser  435182584 2009-01-15 15:10 ligand.tar.gz
+-rw-r--r--   1 juser juser        246 2009-01-20 11:25 README

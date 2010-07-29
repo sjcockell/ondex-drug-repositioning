@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Ondex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ONDEXParameters.xsd">
+
+	<DefaultGraph name="metabolic_pathway_stats" type="memory">
+		<Parameter name="ReplaceExisting">true</Parameter>
+	</DefaultGraph>
+
+	<Parser name="kegg2" datadir="/importdata/kegg2">
+		<Parameter name="Species">ath</Parameter>
+		<Parameter name="ParseSequences">false</Parameter>
+	</Parser>
+
+	<Parser name="EC" datadir="/importdata/ec" />
+
+	<Filter name="gdsvalue">
+		<Parameter name="AttributeName">TAXID</Parameter>
+		<Parameter name="GDSValue">3702</Parameter>
+		<Parameter name="Including">true</Parameter>
+	</Filter>
+
+	<Parser name="reactome" datadir="/importdata/reactome" />
+
+	<Parser name="uniprot" datadir="/importdata/uniprot">
+		<Parameter name="TaxId">3702</Parameter>
+	</Parser>
+
+	<Parser name="tair" datadir="/importdata/tair/" />
+
+	<Parser name="ec" datadir="/importdata/ec/" />
+
+	<Parser name="aracyc2" datadir="/importdata/aracyc/" />
+
+	<Transformer name="removegds">
+		<Parameter name="AttributeName">NA</Parameter>
+	</Transformer>
+
+	<Transformer name="removegds">
+		<Parameter name="AttributeName">AA</Parameter>
+	</Transformer>
+
+	<Parser name="genericobo" datadir="/importdata/chebi">
+		<Parameter name="OboType">ChEBI</Parameter>
+	</Parser>
+
+	<Parser name="genericobo" datadir="/importdata/po">
+		<Parameter name="OboType">PO</Parameter>
+	</Parser>
+
+	<Parser name="goa" datadir="/importdata/goa">
+		<Parameter name="Species">arabidopsis</Parameter>
+		<Parameter name="Expanded">false</Parameter>
+	</Parser>
+
+	<Parser name="GO" datadir="/importdata/go" />
+
+	<Filter name="conceptclass">
+		<Parameter name="TargetConceptClass">Gene</Parameter>
+		<Parameter name="TargetConceptClass">KOGE</Parameter>
+		<Parameter name="TargetConceptClass">KOEN</Parameter>
+		<Parameter name="TargetConceptClass">Publication</Parameter>
+		<Parameter name="RefactorTrinaries">true</Parameter>
+		<Parameter name="Exclude">true</Parameter>
+	</Filter>
+
+	<Mapping name="lowmemoryaccessionbased">
+		<Parameter name="IgnoreAmbiguity">true</Parameter>
+		<Parameter name="GDSEqualsConstraint">TAXID</Parameter>
+	</Mapping>
+
+	<Transformer name="relationcollapser">
+		<Parameter name="CloneGDS">false</Parameter>
+		<Parameter name="RelationTypeSet">equ</Parameter>
+	</Transformer>
+
+	<Mapping name="namebased">
+		<Parameter name="GDSEqualsConstraint">TAXID</Parameter>
+		<Parameter name="ExactSynonyms">false</Parameter>
+		<Parameter name="NameThreshold">2</Parameter>
+	</Mapping>
+
+	<Transformer name="relationcollapser">
+		<Parameter name="CloneGDS">false</Parameter>
+		<Parameter name="RelationTypeSet">equ</Parameter>
+	</Transformer>
+
+	<Export name="oxl" datafile="merge_metabolics_and_name.xml">
+		<Parameter name="GZip">true</Parameter>
+	</Export>
+
+	<Statistics name="ontologyannotationstats" />
+
+	<Statistics name="intersectionofcvs" />
+
+</Ondex>
+
