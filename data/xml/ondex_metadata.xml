@@ -996,6 +996,11 @@
                     scientific literature by expert curators. - http://mint.bio.uniroma2.it/mint/
                 </description>
             </cv>
+            <cv>   
+                <id>Corpus</id>
+                <fullname>Corpus</fullname>
+                <description>Set of publications to be analysed</description>
+            </cv>
         </cvs>
         <units>
             <unit>
@@ -1258,6 +1263,12 @@
                 <datatype>java.lang.Integer</datatype>
             </attrname>
             <attrname>
+                <id>CoSenNum</id>
+                <fullname>Sentence coocurrence</fullname>
+                <description>Number of times two concepts are mentioned together in the same sentence</description>
+                <datatype>java.lang.Integer</datatype>
+            </attrname>            
+            <attrname>
                 <id>TM_SCORE</id>
                 <fullname>text mining score</fullname>
                 <description>Score to define quality of text mining based
@@ -1370,10 +1381,9 @@
             <attrname>
                 <id>EVIDENCE</id>
                 <fullname>evidence sentences</fullname>
-                <description>evidence text that support the validation of a mapping (","
-                    deliminated)
+                <description>evidence text that support the validation of a mapping
                 </description>
-                <datatype>java.lang.String</datatype>
+                <datatype>java.util.HashSet</datatype>
             </attrname>
             <attrname>
                 <id>CONF</id>
@@ -2084,9 +2094,12 @@
                 </specialisationOf>
             </cc>
             <cc>
-                <id>PODevStage</id>
-                <fullname>plant developmental stages</fullname>
-                <description>ontology describing Plant developmental stages (PO)</description>
+                <id>PO_GrowthStage</id>
+                <fullname>Plant Growth and Developmental Stage (PO)</fullname>
+                <description>TA controlled vocabulary of growth and developmental stages
+                 in various plants and their relationships. Examples are germination,
+                 seedling, flowering, etc.
+				</description>
                 <specialisationOf>
                     <id>PlantOntologyTerms</id>
                     <fullname>PlantOntologyTerms</fullname>
@@ -2695,9 +2708,11 @@
                 </specialisationOf>
             </cc>
             <cc>
-                <id>POSTRUC</id>
-                <fullname>plant Structure</fullname>
-                <description>ontology describing Plant Structure (PO)</description>
+                <id>PO_PlantStructure</id>
+                <fullname>Plant Structure (PO)</fullname>
+                <description>The controlled vocabulary of plant structures representing organs, 
+                	tissue and cell types. Examples are stamen, gynoecium, petal, parenchyma,
+                	guard cell, etc</description>
                 <specialisationOf>
                     <id>PlantOntologyTerms</id>
                     <fullname>PlantOntologyTerms</fullname>
