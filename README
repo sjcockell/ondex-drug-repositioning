@@ -1,5 +1,11 @@
+Code by Simon J Cockell, 2009-2010.
+
 Code for Drug Repositioning project within Ondex framework (http://ondex.org).
 
 Build with Maven2
 
 Run using ondex-mini
+
+Code used in the following publications:
+
+Simon J Cockell, Jochen Weile, Phillip Lord, Claire Wipat, Dmytro Andriychenko, Matthew Pocock, Darren Wilkinson, Malcolm Young and Anil Wipat (2010) An integrated dataset for in silico drug discovery. Journal of Integrative Bioinformatics 7(3):116. (doi:[10.2390/biecoll-jib-2010-116](heep://dx.doi.org/10.2390/biecoll-jib-2010-116))

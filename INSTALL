@@ -1,0 +1,9 @@
+You will need Maven2 installed (http://maven.apache.org/). In the root directory of the repository:
+
+'mvn install'
+
+If you get a BUILD SUCCESSFUL message, then there will be a drug_repositioning-0.1.3-SNAPSHOT-jar-with-dependencies.jar in the target/ directory.
+Copy this .jar to the plugins folder of ondex-mini (download from the Ondex Nexus site here: http://ondex.rothamsted.bbsrc.ac.uk/nexus/index.html#nexus-search;quick~ondex-mini)
+
+You can then use the plugins as part of your Ondex workflows.
+
